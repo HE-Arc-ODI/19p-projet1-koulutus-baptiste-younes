@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
 @Path("program/{programId}/course/{courseId}/session")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-public class ServiceResource {
+public class SessionResource {
   @Inject
   private PersistenceService persistenceService;
 
