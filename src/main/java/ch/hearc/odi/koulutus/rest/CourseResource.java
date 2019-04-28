@@ -3,16 +3,21 @@ package ch.hearc.odi.koulutus.rest;
 
 import ch.hearc.odi.koulutus.business.Course;
 import ch.hearc.odi.koulutus.business.Participant;
-import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.exception.ProgramException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.CacheControl;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import net.bytebuddy.description.field.FieldDescription.InGenericShape;
 
 @Path("program")
 @Produces(MediaType.APPLICATION_JSON)
@@ -24,9 +29,13 @@ public class CourseResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{programId}/course}")
-    public Course createCourseByProgramId(@PathParam("programId") Integer programId)
+    public Course createCourseByProgramId(
+        @PathParam("programId") Integer programId,
+        @FormParam("quarter") String quarter,
+        @FormParam("year") Integer year,
+        @FormParam("maxNumberOfParticipants") Integer maxNumberOfParticipants)
         throws ProgramException {
-        return persistenceService.createAndPersistCourse(programId);
+        return persistenceService.createAndPersistCourse(programId, quarter, year, maxNumberOfParticipants);
     }
 
     @GET
@@ -64,8 +73,11 @@ public class CourseResource {
     @Path("{programId}/course/{courseId}/participant")
     public List<Participant> getParticipantsByCourseId(
         @PathParam("programId")Integer programId,
-        @PathParam("courseId") Integer courseId) {
-        return persistenceService.getParticipantsByCoiurseId(programId, courseId);
+        @PathParam("courseId") Integer courseId,
+        @FormParam("quarter") String quarter,
+        @FormParam("year") Integer year,
+        @FormParam("maxNumberOfParticipants") Integer maxNumberOfParticipants){
+        return persistenceService.getParticipantsByCourseId(programId, courseId, quarter, year, maxNumberOfParticipants);
     }
 
 }

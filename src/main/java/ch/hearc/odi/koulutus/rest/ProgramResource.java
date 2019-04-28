@@ -1,6 +1,7 @@
 package ch.hearc.odi.koulutus.rest;
 
 import ch.hearc.odi.koulutus.business.Program;
+import ch.hearc.odi.koulutus.exception.ParticipantException;
 import ch.hearc.odi.koulutus.exception.ProgramException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
 import javax.inject.Inject;
@@ -30,7 +31,8 @@ public class ProgramResource {
 
     @GET
     @Path("{programId}")
-    public Program getProgramById(@PathParam("programId") Integer programId){
+    public Program getProgramById(@PathParam("programId") Integer programId)
+        throws ProgramException {
         return persistenceService.getProgramById(programId);
     }
 
@@ -56,7 +58,7 @@ public class ProgramResource {
     public void registerParticipant(
         @PathParam("programId") Integer programId,
         @PathParam("courseId") Integer courseId,
-        @PathParam("participantId") Integer participantId) {
+        @PathParam("participantId") Integer participantId) throws ParticipantException {
         persistenceService.registerParticipant(programId,courseId,participantId);
     }
 }
