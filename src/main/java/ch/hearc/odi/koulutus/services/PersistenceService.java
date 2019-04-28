@@ -6,6 +6,10 @@ package ch.hearc.odi.koulutus.services;
 
 
 import ch.hearc.odi.koulutus.business.Pojo;
+import ch.hearc.odi.koulutus.business.Program;
+import ch.hearc.odi.koulutus.business.Session;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -38,6 +42,35 @@ public class PersistenceService {
     return pojo;
   }
 
+  public List<Session> getSessionByCourseAndProgram(Long aLong, Long aLong1) {
+  }
+
+  public ArrayList<Program> getPrograms() {
+  }
+
+  public Program createAndPersistProgram(String name, String richDescription, String field, Integer price) {
+  }
+
+  public Program getProgramById(Integer programId) {
+  }
+
+  public void deleteProgram(Integer programId) {
+  }
+
+  public void updateProgram(Integer programId, Program newProgram) {
+  }
+
+  public Session createAndPersistSession(Long aLong, Long aLong1) {
+  }
+
+  public Session getDetailsOfSessionByIds(Long aLong, Long aLong1, Long aLong2) {
+  }
+
+  public void unregisterSessionToCourse() {
+  }
+
+  public void editSession() {
+  }
 }
 
 

@@ -1,5 +1,7 @@
 package ch.hearc.odi.koulutus.rest;
 
+import ch.hearc.odi.koulutus.business.Session;
+import ch.hearc.odi.koulutus.services.PersistenceService;
 import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder.In;
@@ -56,10 +58,7 @@ public class ServiceResource {
       @PathParam("programId") Integer programId,
       @PathParam("courseId") Integer courseId,
       @PathParam("sessionId")Integer sessionId) {
-    return persistenceService.unregisterSessionToCourse(
-        new Long(programId),
-        new Long(courseId),
-        new Long(sessionId));
+    return persistenceService.unregisterSessionToCourse();
   }
 
   @PUT
@@ -68,10 +67,7 @@ public class ServiceResource {
       @PathParam("programId") Integer programId,
       @PathParam("courseId") Integer courseId,
       @PathParam("sessionId")Integer sessionId) {
-    return persistenceService.editSession(
-        new Long(programId),
-        new Long(courseId),
-        new Long(sessionId));
+    return persistenceService.editSession();
   }
 
 }

@@ -78,7 +78,6 @@ public class Participant {
   }
 
 
-
   public Course getCourse(Long id) {
     for (Course course : this.courses) {
       if (course.getId() == (id.longValue())) {

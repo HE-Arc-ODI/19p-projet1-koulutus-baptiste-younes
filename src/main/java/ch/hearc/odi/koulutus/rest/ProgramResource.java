@@ -41,28 +41,19 @@ public class ProgramResource {
 
     @DELETE
     @Path("{programId}")
-    public void deleteProgramById(@PathParam("programId") Integer programId){
-        try{
-            persistenceService.deleteProgram(programId);
-            CacheControl cacheControl = new CacheControl();
-            cacheControl.setMaxAge(86400);
-        }catch (ProgramException ex){
-            ex.printStackTrace();
-            throw new WebApplicationException("not deleted");
-        }
+    public void deleteProgramById(@PathParam("programId") Integer programId)
+        throws ProgramException {
+        persistenceService.deleteProgram(programId);
+        CacheControl cacheControl = new CacheControl();
+        cacheControl.setMaxAge(86400);
     }
 
     @PUT
     @Path("{programId}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateProgram(@PathParam("programId") Integer programId,
-                              Program newProgram){
-        try{
-            persistenceService.updateProgram(programId,newProgram);
-        }catch (ProgramException ex){
-            ex.printStackTrace();
-            throw new WebApplicationException("not updated");
-        }
+                              Program newProgram) throws ProgramException {
+        persistenceService.updateProgram(programId,newProgram);
     }
 
 }
