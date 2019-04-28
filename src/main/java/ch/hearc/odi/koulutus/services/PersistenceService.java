@@ -5,6 +5,8 @@
 package ch.hearc.odi.koulutus.services;
 
 
+import ch.hearc.odi.koulutus.business.Course;
+import ch.hearc.odi.koulutus.business.Participant;
 import ch.hearc.odi.koulutus.business.Pojo;
 import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.business.Session;
@@ -70,6 +72,24 @@ public class PersistenceService {
   }
 
   public void editSession() {
+  }
+
+  public List<Participant> getParticipants() {
+  }
+
+  public void addParticipant() {
+  }
+
+  public Participant getParticipantById() {
+  }
+
+  public void deleteParticipant() {
+  }
+
+  public void editParticipant() {
+  }
+
+  public List<Course> getCourseByParticipant() {
   }
 }
 
