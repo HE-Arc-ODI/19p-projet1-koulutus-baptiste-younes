@@ -1,6 +1,7 @@
 package ch.hearc.odi.koulutus.business;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -98,21 +99,18 @@ public class Program {
   public void setPrice(Long price) {
     this.price = price;
   }
+
   public void addCourse(Course course) {
     courses.add(course);
   }
 
-  public Integer getIndex(Integer id) throws ProgramException {
+  public Integer getIndex(Long id) throws ProgramException {
     for (int i = 0; i < courses.size(); i++){
       Course c = courses.get(i);
       if (c.getId() == id){
-        return i;
-      }
+        return i;}
     }
     throw new ProgramException("Index not found");
-  }
-  public void removeCourse(Integer id) throws ProgramException {
-    this.courses.remove(getIndex(id));
   }
 
   public void update(Program newProgram) {
@@ -122,31 +120,11 @@ public class Program {
     this.setPrice(newProgram.getPrice());
     this.setRichDescription(newProgram.getRichDescription());
   }
-}
-  public void addCourse(Course course) {
-    courses.add(course);
-  }
 
-  public Integer getIndex(Integer id) throws ProgramException {
-    for (int i = 0; i < courses.size(); i++){
-      Course c = courses.get(i);
-      if (c.getId() == id){
-        return i;
-      }
-    }
-    throw new ProgramException("Index not found");
-  }
-  public void removeCourse(Integer id) throws ProgramException {
+  public void removeCourse(Long id) throws ProgramException {
     this.courses.remove(getIndex(id));
   }
 
-  public void update(Program newProgram) {
-    this.setCourses(newProgram.getCourses());
-    this.setField(newProgram.getField());
-    this.setName(newProgram.getName());
-    this.setPrice(newProgram.getPrice());
-    this.setRichDescription(newProgram.getRichDescription());
-  }
 }
 
 
