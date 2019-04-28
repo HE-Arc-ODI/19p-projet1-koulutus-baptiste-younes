@@ -58,7 +58,7 @@ public class SessionResource {
       @PathParam("programId") Integer programId,
       @PathParam("courseId") Integer courseId,
       @PathParam("sessionId")Integer sessionId) {
-    persistenceService.unregisterSessionToCourse();
+    persistenceService.unregisterSessionToCourse(programId,courseId,sessionId);
   }
 
   @PUT
@@ -67,7 +67,7 @@ public class SessionResource {
       @PathParam("programId") Integer programId,
       @PathParam("courseId") Integer courseId,
       @PathParam("sessionId")Integer sessionId) {
-    persistenceService.editSession();
+    persistenceService.editSession(programId,courseId,sessionId);
   }
 
 }

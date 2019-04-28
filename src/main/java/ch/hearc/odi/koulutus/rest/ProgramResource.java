@@ -57,6 +57,6 @@ public class ProgramResource {
         @PathParam("programId") Integer programId,
         @PathParam("courseId") Integer courseId,
         @PathParam("participantId") Integer participantId) {
-        persistenceService.registerParticipant();
+        persistenceService.registerParticipant(programId,courseId,participantId);
     }
 }

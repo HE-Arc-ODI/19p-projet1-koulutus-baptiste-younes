@@ -36,28 +36,28 @@ public class ParticipantResource {
   @Path("{participantId}")
   public Participant getParticpantById(
       @PathParam("participantId") Integer participantId) {
-    return persistenceService.getParticipantById();
+    return persistenceService.getParticipantById(participantId);
   }
 
   @DELETE
   @Path("{participantId}")
   public void deleteParticipant(
       @PathParam("participantId") Integer participantId) {
-    persistenceService.deleteParticipant();
+    persistenceService.deleteParticipant(participantId);
   }
 
   @PUT
   @Path("{participantId}")
   public void editParticipant(
       @PathParam("participantId") Integer participantId) {
-    persistenceService.editParticipant();
+    persistenceService.editParticipant(participantId);
   }
 
   @GET
   @Path("{participantId}/summary")
   public List<Course> getCourseByParticipant(
       @PathParam("participantId") Integer participantId) {
-    return persistenceService.getCourseByParticipant();
+    return persistenceService.getCourseByParticipant(participantId);
   }
 }
 

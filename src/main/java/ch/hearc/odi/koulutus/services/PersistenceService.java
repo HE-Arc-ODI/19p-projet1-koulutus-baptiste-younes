@@ -5,6 +5,8 @@
 package ch.hearc.odi.koulutus.services;
 
 
+import ch.hearc.odi.koulutus.business.Course;
+import ch.hearc.odi.koulutus.business.Participant;
 import ch.hearc.odi.koulutus.business.Pojo;
 import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.business.Session;
@@ -48,7 +50,7 @@ public class PersistenceService {
   public ArrayList<Program> getPrograms() {
   }
 
-  public Program createAndPersistProgram(String name, String richDescription, String field, Integer price) {
+  public Program createAndPersistProgram() {
   }
 
   public Program getProgramById(Integer programId) {
@@ -66,10 +68,51 @@ public class PersistenceService {
   public Session getDetailsOfSessionByIds(Long aLong, Long aLong1, Long aLong2) {
   }
 
-  public void unregisterSessionToCourse() {
+  public void unregisterSessionToCourse(Integer programId, Integer courseId,
+      Integer sessionId) {
   }
 
-  public void editSession() {
+  public void editSession(Integer programId, Integer courseId, Integer sessionId) {
+  }
+
+  public void registerParticipant(Integer programId, Integer courseId,
+      Integer participantId) {
+  }
+
+  public List<Participant> getParticipants() {
+  }
+
+  public void addParticipant() {
+  }
+
+  public Participant getParticipantById(Integer participantId) {
+  }
+
+  public void deleteParticipant(Integer participantId) {
+  }
+
+  public void editParticipant(Integer participantId) {
+  }
+
+  public List<Course> getCourseByParticipant(Integer participantId) {
+  }
+
+  public Course createAndPersistCourse(Integer programId) {
+  }
+
+  public ArrayList<Course> getCoursesByProgramId(Integer programId) {
+  }
+
+  public Course getDetailsOfCourseByProgram(Integer programId, Integer courseId) {
+  }
+
+  public void deleteCourseOfProgram(Integer programId, Integer courseId) {
+  }
+
+  public Course updateCourse(Integer programId, Integer courseId) {
+  }
+
+  public List<Participant> getParticipantsByCoiurseId(Integer programId, Integer courseId) {
   }
 }
 
