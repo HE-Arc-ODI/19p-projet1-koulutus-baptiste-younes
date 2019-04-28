@@ -101,4 +101,8 @@ public class Participant {
     }
   }
 
+  public void addCourse(Course course){
+    courses.add(course);
+  }
+
 }
