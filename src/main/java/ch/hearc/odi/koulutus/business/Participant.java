@@ -1,5 +1,6 @@
 package ch.hearc.odi.koulutus.business;
 
+import ch.hearc.odi.koulutus.exception.ProgramException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

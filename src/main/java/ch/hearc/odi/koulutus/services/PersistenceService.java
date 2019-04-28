@@ -50,7 +50,7 @@ public class PersistenceService {
   public ArrayList<Program> getPrograms() {
   }
 
-  public Program createAndPersistProgram(String name, String richDescription, String field, Integer price) {
+  public Program createAndPersistProgram() {
   }
 
   public Program getProgramById(Integer programId) {
@@ -90,6 +90,9 @@ public class PersistenceService {
   }
 
   public List<Course> getCourseByParticipant() {
+  }
+
+  public void registerParticipant() {
   }
 }
 

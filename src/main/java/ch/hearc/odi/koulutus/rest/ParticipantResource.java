@@ -29,7 +29,7 @@ public class ParticipantResource {
 
   @POST
   public void addParticipant() {
-    return persistenceService.addParticipant();
+    persistenceService.addParticipant();
   }
 
   @GET
