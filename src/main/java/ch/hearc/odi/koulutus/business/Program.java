@@ -1,11 +1,11 @@
 package ch.hearc.odi.koulutus.business;
 
 import java.util.ArrayList;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import ch.hearc.odi.koulutus.exception.ProgramException;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -37,6 +37,20 @@ public class Program {
     this(name, richDescription,field,price);
     this.id = id;
   }
+
+  public Program(Program p, Course c) {
+    id = p.getId();
+    name = p.getName();
+    richDescription = p.getRichDescription();
+    field = p.getField();
+    price = p.getPrice();
+    courses = new ArrayList<>();
+    courses.add(c);
+  }
+
+  @XmlElement
+  @Transient
+  public List<Course> getCourses() { return courses; }
 
   public void setCourses(List<Course> courses) {
     this.courses = courses;
@@ -84,5 +98,55 @@ public class Program {
   public void setPrice(Long price) {
     this.price = price;
   }
+  public void addCourse(Course course) {
+    courses.add(course);
+  }
+
+  public Integer getIndex(Integer id) throws ProgramException {
+    for (int i = 0; i < courses.size(); i++){
+      Course c = courses.get(i);
+      if (c.getId() == id){
+        return i;
+      }
+    }
+    throw new ProgramException("Index not found");
+  }
+  public void removeCourse(Integer id) throws ProgramException {
+    this.courses.remove(getIndex(id));
+  }
+
+  public void update(Program newProgram) {
+    this.setCourses(newProgram.getCourses());
+    this.setField(newProgram.getField());
+    this.setName(newProgram.getName());
+    this.setPrice(newProgram.getPrice());
+    this.setRichDescription(newProgram.getRichDescription());
+  }
 }
+  public void addCourse(Course course) {
+    courses.add(course);
+  }
+
+  public Integer getIndex(Integer id) throws ProgramException {
+    for (int i = 0; i < courses.size(); i++){
+      Course c = courses.get(i);
+      if (c.getId() == id){
+        return i;
+      }
+    }
+    throw new ProgramException("Index not found");
+  }
+  public void removeCourse(Integer id) throws ProgramException {
+    this.courses.remove(getIndex(id));
+  }
+
+  public void update(Program newProgram) {
+    this.setCourses(newProgram.getCourses());
+    this.setField(newProgram.getField());
+    this.setName(newProgram.getName());
+    this.setPrice(newProgram.getPrice());
+    this.setRichDescription(newProgram.getRichDescription());
+  }
+}
+
 
