@@ -19,10 +19,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PersistenceService {
 
   private EntityManagerFactory entityManagerFactory;
+  private static final Logger logger = LogManager.getLogger(PersistenceService.class)
 
 
   public PersistenceService() {
