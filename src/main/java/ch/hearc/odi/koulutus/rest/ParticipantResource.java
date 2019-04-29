@@ -3,10 +3,13 @@ package ch.hearc.odi.koulutus.rest;
 import ch.hearc.odi.koulutus.business.Course;
 import ch.hearc.odi.koulutus.business.Participant;
 import ch.hearc.odi.koulutus.business.Session;
+import ch.hearc.odi.koulutus.exception.ParticipantException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
+import java.text.ParseException;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -28,36 +31,39 @@ public class ParticipantResource {
   }
 
   @POST
-  public void addParticipant() {
-    persistenceService.addParticipant();
+  public void addParticipant(
+      @FormParam("firstname") String firstname,
+      @FormParam("lastname") String lastname,
+      @FormParam("birthdate") String birthdate) throws ParseException {
+    persistenceService.addParticipant(firstname,lastname,birthdate);
   }
 
   @GET
   @Path("{participantId}")
   public Participant getParticpantById(
-      @PathParam("participantId") Integer participantId) {
-    return persistenceService.getParticipantById();
+      @PathParam("participantId") Integer participantId) throws ParticipantException {
+    return persistenceService.getParticipantById(participantId);
   }
 
   @DELETE
   @Path("{participantId}")
   public void deleteParticipant(
-      @PathParam("participantId") Integer participantId) {
-    persistenceService.deleteParticipant();
+      @PathParam("participantId") Integer participantId) throws ParticipantException {
+    persistenceService.deleteParticipant(participantId);
   }
 
   @PUT
   @Path("{participantId}")
   public void editParticipant(
       @PathParam("participantId") Integer participantId) {
-    persistenceService.editParticipant();
+    persistenceService.editParticipant(participantId);
   }
 
   @GET
   @Path("{participantId}/summary")
   public List<Course> getCourseByParticipant(
       @PathParam("participantId") Integer participantId) {
-    return persistenceService.getCourseByParticipant();
+    return persistenceService.getCourseByParticipant(participantId);
   }
 }
 

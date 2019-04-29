@@ -10,6 +10,10 @@ import ch.hearc.odi.koulutus.business.Participant;
 import ch.hearc.odi.koulutus.business.Pojo;
 import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.business.Session;
+import ch.hearc.odi.koulutus.exception.ParticipantException;
+import ch.hearc.odi.koulutus.exception.ProgramException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -45,54 +49,160 @@ public class PersistenceService {
   }
 
   public List<Session> getSessionByCourseAndProgram(Long aLong, Long aLong1) {
+    return null;
   }
 
   public ArrayList<Program> getPrograms() {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    List<Program> programs = entityManager.createQuery("from Program", Program.class).getResultList();
+    entityManager.getTransaction().commit();
+    entityManager.close();
+    return (ArrayList<Program>) programs;
   }
 
   public Program createAndPersistProgram() {
+  return null;
   }
 
-  public Program getProgramById(Integer programId) {
+  public Program getProgramById(Integer programId) throws ProgramException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Program program = entityManager.find(Program.class, programId);
+
+    if (program == null) {
+      throw new ProgramException("Program not found");}
+
+    entityManager.getTransaction().commit();
+    entityManager.close();
+    return program;
   }
 
-  public void deleteProgram(Integer programId) {
+  public void deleteProgram(Integer programId) throws ProgramException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Program program = entityManager.find(Program.class, new Long(programId));
+    entityManager.remove(program);
+    if (program == null) {
+      throw new ProgramException("Program not found");
+    }
+    entityManager.getTransaction().commit();
+    entityManager.close();
   }
 
   public void updateProgram(Integer programId, Program newProgram) {
   }
 
   public Session createAndPersistSession(Long aLong, Long aLong1) {
+    return null;
   }
 
   public Session getDetailsOfSessionByIds(Long aLong, Long aLong1, Long aLong2) {
+    return null;
   }
 
-  public void unregisterSessionToCourse() {
+  public void unregisterSessionToCourse(Integer programId, Integer courseId, Integer sessionId) {
+
   }
 
-  public void editSession() {
+  public void editSession(Integer programId, Integer courseId, Integer sessionId) {
+  }
+
+  public void registerParticipant(Integer programId, Integer courseId, Integer participantId)
+      throws ParticipantException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Participant participant = entityManager.find(Participant.class, participantId);
+    Course course = entityManager.find(Course.class, courseId);
+    Program program = entityManager.find(Program.class, programId);
+    entityManager.remove(participant);
+    if (participant == null || course == null || program == null) {
+      throw new ParticipantException("Data not found");
+    }
+    participant.addCourse(course);
+    entityManager.merge(participant);
+    entityManager.getTransaction().commit();
+    entityManager.close();
   }
 
   public List<Participant> getParticipants() {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    List<Participant> participant = entityManager.createQuery("from Participant", Participant.class).getResultList();
+    entityManager.getTransaction().commit();
+    entityManager.close();
+    return (List<Participant>) participant;
   }
 
-  public void addParticipant() {
+  public void addParticipant(String firstname, String lastname, String birthdate)
+      throws ParseException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Participant participant = new Participant(firstname, lastname, new SimpleDateFormat("dd/MM/yyyy").parse(birthdate));
+    entityManager.persist(participant);
+    entityManager.getTransaction().commit();
+    entityManager.close();
   }
 
-  public Participant getParticipantById() {
+  public Participant getParticipantById(Integer participantId) throws ParticipantException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Participant participant = entityManager.find(Participant.class, participantId);
+
+    if (participant == null) {
+      throw new ParticipantException("Participant not found");
+    }
+
+    entityManager.getTransaction().commit();
+    entityManager.close();
+    return participant;
   }
 
-  public void deleteParticipant() {
+  public void deleteParticipant(Integer participantId) throws ParticipantException {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Participant participant = entityManager.find(Participant.class, participantId);
+    entityManager.remove(participant);
+    if (participant == null) {
+      throw new ParticipantException("Participant was not found for deletion");
+    }
+
+    entityManager.getTransaction().commit();
+    entityManager.close();
   }
 
-  public void editParticipant() {
+  public void editParticipant(Integer participantId) {
   }
 
-  public List<Course> getCourseByParticipant() {
+  public List<Course> getCourseByParticipant(Integer participantId) {
+  return null;
   }
 
-  public void registerParticipant() {
+  public Course createAndPersistCourse(Integer id, String quarter, Integer year,
+      Integer programId) {
+    return null;
+  }
+
+  public ArrayList<Course> getCoursesByProgramId(Integer programId) {
+    return null;
+  }
+
+  public Course getDetailsOfCourseByProgram(Integer programId, Integer courseId) {
+    return null;
+  }
+
+  public void deleteCourseOfProgram(Integer programId, Integer courseId) {
+
+  }
+
+  public Course updateCourse(Integer programId, Integer courseId) {
+    return null;
+  }
+
+  public List<Participant> getParticipantsByCourseId(Integer integer, Integer id,
+      String quarter, Integer programId,
+      Integer courseId) {
+    return null;
   }
 }
 
