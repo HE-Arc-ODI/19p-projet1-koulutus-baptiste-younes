@@ -5,6 +5,7 @@ import ch.hearc.odi.koulutus.business.Participant;
 import ch.hearc.odi.koulutus.exception.ParticipantException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -34,7 +35,7 @@ public class ParticipantResource {
       @FormParam("firstname") String firstname,
       @FormParam("lastname") String lastname,
       @FormParam("birthdate") String birthdate) throws ParseException {
-    persistenceService.addParticipant(firstname,lastname,birthdate);
+    persistenceService.addParticipant(firstname,lastname,new SimpleDateFormat("dd/MM/yyyy").parse(birthdate));
   }
 
   @GET

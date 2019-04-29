@@ -10,8 +10,7 @@ import ch.hearc.odi.koulutus.exception.ProgramException;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "Program")
-@XmlRootElement(name = "Program")
+@Table
 public class Program {
 
   private Long id;

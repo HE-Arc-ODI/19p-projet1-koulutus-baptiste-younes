@@ -15,6 +15,7 @@ import ch.hearc.odi.koulutus.exception.ProgramException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,19 +26,13 @@ import org.apache.logging.log4j.Logger;
 public class PersistenceService {
 
   private EntityManagerFactory entityManagerFactory;
-  private static final Logger logger = LogManager.getLogger(PersistenceService.class)
+  private static final Logger logger = LogManager.getLogger(PersistenceService.class);
 
 
   public PersistenceService() {
     //  an EntityManagerFactory is set up once for an application
     //  IMPORTANT: the name here matches the name of persistence-unit in persistence.xml
     entityManagerFactory = Persistence.createEntityManagerFactory("ch.hearc.odi.koulutus.jpa");
-  }
-
-  @Override
-  public void finalize() throws Throwable {
-    entityManagerFactory.close();
-    super.finalize();
   }
 
   public Pojo createAndPersistAPojo(String myProperty){
@@ -64,8 +59,14 @@ public class PersistenceService {
     return (ArrayList<Program>) programs;
   }
 
-  public Program createAndPersistProgram() {
-  return null;
+  public Program createAndPersistProgram(String name, String richDescription, String field, Integer price) {
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    entityManager.getTransaction().begin();
+    Program program = new Program(name, richDescription,field, new Long(price));
+    entityManager.persist(program);
+    entityManager.getTransaction().commit();
+    entityManager.close();
+    return program;
   }
 
   public Program getProgramById(Integer programId) throws ProgramException {
@@ -74,7 +75,7 @@ public class PersistenceService {
     Program program = entityManager.find(Program.class, programId);
 
     if (program == null) {
-      throw new ProgramException("Program " + programId + "not found");}
+      throw new ProgramException("Program not found");}
 
     entityManager.getTransaction().commit();
     entityManager.close();
@@ -139,11 +140,11 @@ public class PersistenceService {
     return (List<Participant>) participant;
   }
 
-  public void addParticipant(String firstname, String lastname, String birthdate)
+  public void addParticipant(String firstname, String lastname, Date birthdate)
       throws ParseException {
     EntityManager entityManager = entityManagerFactory.createEntityManager();
     entityManager.getTransaction().begin();
-    Participant participant = new Participant(firstname, lastname, new SimpleDateFormat("dd/MM/yyyy").parse(birthdate));
+    Participant participant = new Participant(firstname, lastname, birthdate);
     entityManager.persist(participant);
     entityManager.getTransaction().commit();
     entityManager.close();
@@ -213,6 +214,12 @@ public class PersistenceService {
   }
 
   public void deleteProgramById(Integer programId) {
+  }
+
+  @Override
+  public void finalize() throws Throwable {
+    entityManagerFactory.close();
+    super.finalize();
   }
 }
 

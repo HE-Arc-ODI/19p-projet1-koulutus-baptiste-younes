@@ -4,12 +4,16 @@ import ch.hearc.odi.koulutus.exception.ProgramException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
+@Entity
+@Table
 public class Participant {
 
   private Long id;
@@ -73,7 +77,7 @@ public class Participant {
     this.birthdate = birthdate;
   }
 
-  @ManyToMany(targetEntity = Course.class, fetch = FetchType.EAGER, mappedBy = "runners")
+  @ManyToMany
   public List<Course> getCourses() {
     return courses;
   }

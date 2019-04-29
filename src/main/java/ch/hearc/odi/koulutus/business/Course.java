@@ -1,99 +1,110 @@
 package ch.hearc.odi.koulutus.business;
 
-import ch.hearc.odi.koulutus.exception.ProgramException;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.annotations.GenericGenerator;
-
+/*TEST GRP MIGROS*/
 @Entity
-@Table(name = "Course")
-@XmlRootElement(name = "Course")
-public class Course {
+@Table
+public class Course  implements Serializable {
 
-  private Integer id;
-  public enum CEnum {OPEN ("open"), CONFIRMED ("confirmed"), CANCELED ("canceled");
-    private String cEnum;
-    CEnum(String cEnum){this.cEnum = cEnum;}
-    public String toString() {
-      return super.toString().toLowerCase();}
-  }
-  private CEnum status;
-  private Integer year;
-  private Integer maxNumberOfParticipants;
+  private Long id;
+  private int year;
+  private int maxNumberOfParticipants;
+  private List<Participant> runners;
+  private Program program;
 
-  public enum QEnum {N1(Integer.valueOf(1)), N2(Integer.valueOf(2)), N3(Integer.valueOf(3)), N4(Integer.valueOf(4));
-    private Integer qEnum;
-    QEnum(Integer qEnum){this.qEnum = qEnum;}
-    public String toString() {
-      return super.toString().toLowerCase();}
+  public Course() {
+    runners = new ArrayList<>();
   }
-  private QEnum quarter;
+
+  public enum CourseStatus {OPEN ("open"), CONFIRMED ("confirmed"), CANCELED ("canceled");
+    private String coursStatus;
+    CourseStatus(String coursStatus){
+      this.coursStatus = coursStatus;
+    }
+    public String toString() { return super.toString().toLowerCase();}
+  }
+  private CourseStatus status;
+
+  public enum QuarterEnum {NUMBER_1(Integer.valueOf(1)), NUMBER_2(Integer.valueOf(2)), NUMBER_3(Integer.valueOf(3)), NUMBER_4(Integer.valueOf(4));
+    private Integer quarterEnum;
+    QuarterEnum(Integer quarterEnum){
+      this.quarterEnum = quarterEnum;
+    }
+    public String toString() { return super.toString().toLowerCase();}
+  }
+  private QuarterEnum quarter;
   private List<Session> sessions;
 
-  @OneToMany(targetEntity = Session.class, fetch = FetchType.EAGER)
-  @JoinColumn(name = "session")
-  @OrderColumn(name = "order_session")
-  public void setSession() {
-    setSession();
-  }
-
-  @OneToMany(targetEntity = Session.class, fetch = FetchType.EAGER)
-  @JoinColumn(name = "session")
-  @OrderColumn(name = "order_session")
-  public List<Session> getSessions() {
-    return this.getSessions();
-  }
-
-  public void setSession(List<Session> sessions) {
-    this.sessions = sessions;
-  }
-
-  public void addSessions(Session session) throws ProgramException {
-    sessions.add(session);
-  }
-
-  public void removeSession(Integer idSession) throws ProgramException {
-    this.sessions.remove(this.getIndex(idSession));
-  }
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")
   public Long getId() {
-    return Long.valueOf(id);
+    return id;
   }
 
-  public int getIndex(Integer id) throws ProgramException {
-    int i;
-    for (i = 0; i < sessions.size(); i++) {
-      Session session = sessions.get(i);
-      if (session.getId() == (id.longValue())) {
-        return i;
-      }
-    }
-    throw new ProgramException("Index not found");
-  }
-
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
-  public Integer getYear() {
+  public int getYear() {
     return year;
   }
 
-  public void setYear(Integer year) {
+  public void setYear(int year) {
     this.year = year;
   }
 
-  public Integer getMaxNumberOfParticipants() {
+  public int getMaxNumberOfParticipants() {
     return maxNumberOfParticipants;
   }
 
-  public void setMaxNumberOfParticipants(Integer maxNumberOfParticipants) {
+  public void setMaxNumberOfParticipants(int maxNumberOfParticipants) {
     this.maxNumberOfParticipants = maxNumberOfParticipants;
   }
 
+  public CourseStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(CourseStatus status) {
+    this.status = status;
+  }
+
+  @OneToMany(targetEntity = Session.class, fetch = FetchType.EAGER)
+  public List<Session> getSessions() {
+    return sessions;
+  }
+
+  public void setSessions(List<Session> sessions) {
+    this.sessions = sessions;
+  }
+
+  public QuarterEnum getQuarter() {
+    return quarter;
+  }
+  public void setQuarter(QuarterEnum quarter) {
+    this.quarter = quarter;
+  }
+
+  @ManyToMany(targetEntity = Participant.class, fetch = FetchType.EAGER)
+  public List<Participant> getRunners() {
+    return runners;
+  }
+
+  public void setRunners(List<Participant> runners) {
+    this.runners = runners;
+  }
+
+  @ManyToOne
+  public Program getProgram() {
+    return program;
+  }
+
+  public void setProgram(Program program) {
+    this.program = program;
+  }
 }

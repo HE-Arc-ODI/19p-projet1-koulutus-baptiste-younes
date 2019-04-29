@@ -29,7 +29,7 @@ public class ProgramResource {
         @FormParam("richDescription") String richDescription,
         @FormParam("field") String field,
         @FormParam("price") Integer price){
-        return persistenceService.createAndPersistProgram();
+        return persistenceService.createAndPersistProgram(name,richDescription,field,price);
     }
 
     @GET

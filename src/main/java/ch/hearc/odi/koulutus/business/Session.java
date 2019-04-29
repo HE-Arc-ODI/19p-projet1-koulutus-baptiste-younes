@@ -10,8 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="Session")
-@XmlRootElement(name = "Session")
+@Table
 public class Session {
 
   private Long id;
@@ -19,6 +18,9 @@ public class Session {
   private Date endDateTime;
   private Double price;
   private String room;
+
+  public Session() {
+  }
 
   public Session(Date startDateTime, Date endDateTime, Double price, String room) {
     this.startDateTime = startDateTime;
