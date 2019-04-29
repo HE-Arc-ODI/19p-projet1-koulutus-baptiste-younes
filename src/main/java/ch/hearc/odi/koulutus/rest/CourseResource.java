@@ -65,8 +65,9 @@ public class CourseResource {
     @Path("{programId}/course/{courseId}")
     public Course updateCourse(
         @PathParam("programId")Integer programId,
-        @PathParam("courseId") Integer courseId) {
-        return persistenceService.updateCourse(programId, courseId);
+        @PathParam("courseId") Integer courseId,
+        Course course) {
+        return persistenceService.updateCourse(programId, courseId, course);
     }
 
     @GET

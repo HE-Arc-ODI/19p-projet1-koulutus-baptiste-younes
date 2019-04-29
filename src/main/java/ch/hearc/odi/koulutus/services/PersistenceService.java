@@ -93,7 +93,8 @@ public class PersistenceService {
   public void updateProgram(Integer programId, Program newProgram) {
   }
 
-  public Session createAndPersistSession(Long aLong, Long aLong1) {
+  public Session createAndPersistSession(Long aLong, Long aLong1, String startDateTime,
+      String endDateTime, Integer price, String room) {
     return null;
   }
 
@@ -105,7 +106,8 @@ public class PersistenceService {
 
   }
 
-  public void editSession(Integer programId, Integer courseId, Integer sessionId) {
+  public void editSession(Integer programId, Integer courseId, Integer sessionId,
+      Session session) {
   }
 
   public void registerParticipant(Integer programId, Integer courseId, Integer participantId)
@@ -171,7 +173,8 @@ public class PersistenceService {
     entityManager.close();
   }
 
-  public void editParticipant(Integer participantId) {
+  public void editParticipant(Integer participantId,
+      Participant participant) {
   }
 
   public List<Course> getCourseByParticipant(Integer participantId) {
@@ -195,7 +198,8 @@ public class PersistenceService {
 
   }
 
-  public Course updateCourse(Integer programId, Integer courseId) {
+  public Course updateCourse(Integer programId, Integer courseId,
+      Course course) {
     return null;
   }
 
@@ -203,6 +207,9 @@ public class PersistenceService {
       String quarter, Integer programId,
       Integer courseId) {
     return null;
+  }
+
+  public void deleteProgramById(Integer programId) {
   }
 }
 

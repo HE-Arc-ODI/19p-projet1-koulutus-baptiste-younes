@@ -54,8 +54,8 @@ public class ParticipantResource {
   @PUT
   @Path("{participantId}")
   public void editParticipant(
-      @PathParam("participantId") Integer participantId) {
-    persistenceService.editParticipant(participantId);
+      @PathParam("participantId") Integer participantId, Participant participant) {
+    persistenceService.editParticipant(participantId, participant);
   }
 
   @GET

@@ -6,7 +6,6 @@ import ch.hearc.odi.koulutus.exception.ProgramException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
@@ -25,7 +24,11 @@ public class ProgramResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Program createProgram(){
+    public Program createAndPersistProgram(
+        @FormParam("name") String name,
+        @FormParam("richDescription") String richDescription,
+        @FormParam("field") String field,
+        @FormParam("price") Integer price){
         return persistenceService.createAndPersistProgram();
     }
 
@@ -38,19 +41,16 @@ public class ProgramResource {
 
     @DELETE
     @Path("{programId}")
-    public void deleteProgramById(@PathParam("programId") Integer programId)
-        throws ProgramException {
-        persistenceService.deleteProgram(programId);
-        CacheControl cacheControl = new CacheControl();
-        cacheControl.setMaxAge(86400);
+    public void deleteProgramById(@PathParam("programId") Integer programId){
+        persistenceService.deleteProgramById(programId);
     }
 
     @PUT
     @Path("{programId}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateProgram(@PathParam("programId") Integer programId,
-                              Program newProgram) throws ProgramException {
-        persistenceService.updateProgram(programId,newProgram);
+                              Program program) throws ProgramException {
+        persistenceService.updateProgram(programId,program);
     }
 
     @POST

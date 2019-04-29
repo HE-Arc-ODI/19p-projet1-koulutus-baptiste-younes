@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -33,10 +34,18 @@ public class SessionResource {
   @POST
   public Session createAndPersistSession(
       @PathParam("programId") Integer programId,
-      @PathParam("courseId") Integer courseId) {
+      @PathParam("courseId") Integer courseId,
+      @FormParam("startDateTime") String startDateTime,
+      @FormParam("endDateTime") String endDateTime,
+      @FormParam("price") Integer price,
+      @FormParam("room") String room){
     return persistenceService.createAndPersistSession(
         new Long(programId),
-        new Long(courseId));
+        new Long(courseId),
+        startDateTime,
+        endDateTime,
+        price,
+        room);
   }
 
   @GET
@@ -65,8 +74,9 @@ public class SessionResource {
   public void editSession(
       @PathParam("programId") Integer programId,
       @PathParam("courseId") Integer courseId,
-      @PathParam("sessionId")Integer sessionId) {
-    persistenceService.editSession(programId,courseId,sessionId);
+      @PathParam("sessionId")Integer sessionId,
+      Session session) {
+    persistenceService.editSession(programId,courseId,sessionId,session);
   }
 
 }
