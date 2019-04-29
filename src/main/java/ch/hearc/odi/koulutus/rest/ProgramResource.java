@@ -1,11 +1,8 @@
 package ch.hearc.odi.koulutus.rest;
 
-
-import ch.hearc.odi.koulutus.business.Course;
 import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.exception.ProgramException;
 import ch.hearc.odi.koulutus.services.PersistenceService;
-
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.CacheControl;
@@ -15,6 +12,7 @@ import java.util.ArrayList;
 @Path("program")
 @Produces(MediaType.APPLICATION_JSON)
 public class ProgramResource {
+
     @Inject
     private PersistenceService persistenceService;
 
@@ -26,11 +24,8 @@ public class ProgramResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Program createProgram(@PathParam("name") String name,
-                                 @PathParam("richDescription") String richDescription,
-                                 @PathParam("field") String field,
-                                 @PathParam("price") Integer price){
-        return persistenceService.createAndPersistProgram(name,richDescription,field,price);
+    public Program createProgram(){
+        return persistenceService.createAndPersistProgram();
     }
 
     @GET
@@ -56,4 +51,12 @@ public class ProgramResource {
         persistenceService.updateProgram(programId,newProgram);
     }
 
+    @POST
+    @Path("{programId}/course/{courseId}/participant/{participantId}")
+    public void registerParticipant(
+        @PathParam("programId") Integer programId,
+        @PathParam("courseId") Integer courseId,
+        @PathParam("participantId") Integer participantId) {
+        persistenceService.registerParticipant(programId,courseId,participantId);
+    }
 }
