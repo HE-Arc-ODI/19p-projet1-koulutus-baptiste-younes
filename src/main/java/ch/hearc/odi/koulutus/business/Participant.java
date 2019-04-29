@@ -78,13 +78,8 @@ public class Participant {
     return courses;
   }
 
-
-  public Course getCourse(Long id) {
-    for (Course course : this.courses) {
-      if (course.getId() == (id.longValue())) {
-        return course;
-      }
-    }
+  public void setCourses(List<Course> courses) {
+    this.courses = courses;
   }
 
   public void removeFromCourse(Long idCourse){
@@ -94,11 +89,8 @@ public class Participant {
   public int getIndex(Long id) {
     int i;
     for (i = 0; i < courses.size(); i++) {
-      Course course = courses.get(i);
-      if (course.getId() == (id.longValue())) {
+      Course course = courses.get(i);}
         return i;
-      }
-    }
   }
 
   public void addCourse(Course course){

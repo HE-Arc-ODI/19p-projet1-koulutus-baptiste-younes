@@ -14,29 +14,24 @@ import org.hibernate.annotations.GenericGenerator;
 public class Course {
 
   private Integer id;
-  public enum quarter {1,2,3,4};
+  public enum CEnum {OPEN ("open"), CONFIRMED ("confirmed"), CANCELED ("canceled");
+    private String cEnum;
+    CEnum(String cEnum){this.cEnum = cEnum;}
+    public String toString() {
+      return super.toString().toLowerCase();}
+  }
+  private CEnum status;
   private Integer year;
   private Integer maxNumberOfParticipants;
-  public enum status {OPEN, CONFIRMED, CANCELLED};
+
+  public enum QEnum {N1(Integer.valueOf(1)), N2(Integer.valueOf(2)), N3(Integer.valueOf(3)), N4(Integer.valueOf(4));
+    private Integer qEnum;
+    QEnum(Integer qEnum){this.qEnum = qEnum;}
+    public String toString() {
+      return super.toString().toLowerCase();}
+  }
+  private QEnum quarter;
   private List<Session> sessions;
-
-  public Course(Integer quarter, Integer year, Integer maxNumberOfParticipants,
-                Enum status) {
-    sessions = new ArrayList<>();
-    status  = Course.status.OPEN;
-  }
-
-
-  public Course(Integer quarter, Integer year, Integer maxNumberOfParticipants) {
-    this();
-    this.year = year;
-    this.maxNumberOfParticipants = maxNumberOfParticipants;
-  }
-  public Course(Integer id, Integer quarter, Integer year, Integer maxNumberOfParticipants) {
-
-    this(quarter, year, maxNumberOfParticipants);
-    this.id = id;
-  }
 
   @OneToMany(targetEntity = Session.class, fetch = FetchType.EAGER)
   @JoinColumn(name = "session")
@@ -63,8 +58,6 @@ public class Course {
   public void removeSession(Integer idSession) throws ProgramException {
     this.sessions.remove(this.getIndex(idSession));
   }
-
-
   @Id
   @GeneratedValue(generator = "increment")
   @GenericGenerator(name = "increment", strategy = "increment")

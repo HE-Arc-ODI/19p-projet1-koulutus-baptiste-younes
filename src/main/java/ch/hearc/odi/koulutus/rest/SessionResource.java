@@ -4,7 +4,6 @@ import ch.hearc.odi.koulutus.business.Session;
 import ch.hearc.odi.koulutus.services.PersistenceService;
 import java.util.List;
 import javax.inject.Inject;
-import javax.persistence.criteria.CriteriaBuilder.In;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
