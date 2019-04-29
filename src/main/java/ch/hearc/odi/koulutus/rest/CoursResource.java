@@ -2,12 +2,8 @@ package ch.hearc.odi.koulutus.rest;
 
 
 import ch.hearc.odi.koulutus.business.Course;
-import ch.hearc.odi.koulutus.business.Program;
 import ch.hearc.odi.koulutus.exception.ProgramException;
-import ch.hearc.odi.koulutus.services.PersistenceService;
-
 import javax.ws.rs.*;
-import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
@@ -28,6 +24,7 @@ public class CoursResource {
             throw new WebApplicationException("Program "+ programId +" not found");
         }
     }
+
 
     //A TESTER Mr Baptist ;)
     @GET
