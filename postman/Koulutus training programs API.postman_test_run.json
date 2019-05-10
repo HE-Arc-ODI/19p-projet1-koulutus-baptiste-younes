@@ -1,0 +1,1993 @@
+{
+	"id": "17bd00bf-655e-4d7f-a734-9e97ce3a9a03",
+	"name": "Koulutus training programs API",
+	"allTests": [],
+	"timestamp": "2019-05-07T15:43:20.835Z",
+	"collection_id": "919f0ff0-df7e-4a63-acc9-cc17bc3d4182",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "91d42508-c168-480a-acb4-532a86524b24",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "919f0ff0-df7e-4a63-acc9-cc17bc3d4182",
+		"name": "Koulutus training programs API",
+		"description": "Koulutus (meaning education in Finnish) is an api to manage training programs.\n",
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "efe2b440-f926-45dd-9e87-6dd9b9018419",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "1aef6662-590f-4537-9679-68c04e81c022",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			}
+		],
+		"variables": [
+			{
+				"key": "baseUrl",
+				"value": "http://localhost:8080/19p_projet1_war_exploded/koulutus/api",
+				"enabled": true
+			}
+		],
+		"order": [],
+		"folders_order": [
+			"0861a3d6-7134-47ee-b093-3fb0782ad1af",
+			"cd3b0c12-0c34-46aa-bd9d-114099ed87f6",
+			"62739bd2-4c3e-40a9-94ab-b491d327bf2f",
+			"8a85e75f-c416-4424-af5f-e87835795f6a"
+		],
+		"owner": "3197604",
+		"favorite": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Create a new training program",
+			"id": "13f4fd7f-f0fc-40de-88eb-7489f1bc5e8f",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"name is correct": false,
+				"richDescription is correct": false,
+				"field is correct": false,
+				"price is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"334"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"name is correct": false,
+					"richDescription is correct": false,
+					"field is correct": false,
+					"price is correct": false
+				}
+			],
+			"time": "334",
+			"totalRequestTime": "334",
+			"iterationResults": {}
+		},
+		{
+			"name": "List all training programs",
+			"id": "9f5cffea-0eda-404d-9e50-f98a28c94c76",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"name is correct": false,
+				"richDescription is correct": false,
+				"field is correct": false,
+				"price is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"272"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"name is correct": false,
+					"richDescription is correct": false,
+					"field is correct": false,
+					"price is correct": false
+				}
+			],
+			"time": "272",
+			"totalRequestTime": "272",
+			"iterationResults": {}
+		},
+		{
+			"name": "View the details of a training program",
+			"id": "50ec05e1-89b0-47dc-98f0-b70287cea215",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"name is correct": false,
+				"richDescription is correct": false,
+				"field is correct": false,
+				"price is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"245"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"name is correct": false,
+					"richDescription is correct": false,
+					"field is correct": false,
+					"price is correct": false
+				}
+			],
+			"time": "245",
+			"totalRequestTime": "245",
+			"iterationResults": {}
+		},
+		{
+			"name": "update an existing training program. Returns the updated training program.",
+			"id": "22e2ba24-e2b0-4b3f-bb1d-91c62b38e399",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"name is correct": false,
+				"richDescription is correct": false,
+				"field is correct": false,
+				"price is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"305"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"name is correct": false,
+					"richDescription is correct": false,
+					"field is correct": false,
+					"price is correct": false
+				}
+			],
+			"time": "305",
+			"totalRequestTime": "305",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete an existing training program",
+			"id": "9b378f7b-9ddb-42de-a89f-749f757a4bf4",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Check status code": false,
+				"array is empty": false
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"383"
+			],
+			"allTests": [
+				{
+					"Check status code": false,
+					"array is empty": false
+				}
+			],
+			"time": "383",
+			"totalRequestTime": "383",
+			"iterationResults": {}
+		},
+		{
+			"name": "Add a new course to an existing program",
+			"id": "4f7455cd-2bee-4eb3-b6ba-806cca1e0918",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"quarter is correct": false,
+				"year is correct": false,
+				"maxNumberOfParticipants is correct": false,
+				"status is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"326"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"quarter is correct": false,
+					"year is correct": false,
+					"maxNumberOfParticipants is correct": false,
+					"status is correct": false
+				}
+			],
+			"time": "326",
+			"totalRequestTime": "326",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get all course for a given program",
+			"id": "8d40e3de-2699-48c6-b188-9d6699b42732",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"quarter is correct": false,
+				"year is correct": false,
+				"maxNumberOfParticipants is correct": false,
+				"status is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"265"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"quarter is correct": false,
+					"year is correct": false,
+					"maxNumberOfParticipants is correct": false,
+					"status is correct": false
+				}
+			],
+			"time": "265",
+			"totalRequestTime": "265",
+			"iterationResults": {}
+		},
+		{
+			"name": "Detail of a course for a given program",
+			"id": "b43ec09d-19c9-408f-bd41-4e751d757697",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"quarter is correct": false,
+				"year is correct": false,
+				"maxNumberOfParticipants is correct": false,
+				"status is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"277"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"quarter is correct": false,
+					"year is correct": false,
+					"maxNumberOfParticipants is correct": false,
+					"status is correct": false
+				}
+			],
+			"time": "277",
+			"totalRequestTime": "277",
+			"iterationResults": {}
+		},
+		{
+			"name": "Update an existing course. Returns the updated course",
+			"id": "543622e9-0b5f-4ede-aadb-60243ab6f6a1",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"quarter is correct": false,
+				"year is correct": false,
+				"maxNumberOfParticipants is correct": false,
+				"status is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"306"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"quarter is correct": false,
+					"year is correct": false,
+					"maxNumberOfParticipants is correct": false,
+					"status is correct": false
+				}
+			],
+			"time": "306",
+			"totalRequestTime": "306",
+			"iterationResults": {}
+		},
+		{
+			"name": "delete a course for a given program",
+			"id": "f4e470c2-56c9-47c5-bffe-670208237545",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Check status code": false,
+				"array is empty": false
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"226"
+			],
+			"allTests": [
+				{
+					"Check status code": false,
+					"array is empty": false
+				}
+			],
+			"time": "226",
+			"totalRequestTime": "226",
+			"iterationResults": {}
+		},
+		{
+			"name": "Create new session(s) for a given course and program",
+			"id": "0a518879-2909-4554-b9fd-194550f9dde4",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"startDateTime is correct": false,
+				"endDateTime is correct": false,
+				"price is correct": false,
+				"room is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"217"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"startDateTime is correct": false,
+					"endDateTime is correct": false,
+					"price is correct": false,
+					"room is correct": false
+				}
+			],
+			"time": "217",
+			"totalRequestTime": "217",
+			"iterationResults": {}
+		},
+		{
+			"name": "List all sessions for a given course and program",
+			"id": "d627b8b3-b500-4d49-92b6-e6bdbb2a470a",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"startDateTime is correct": false,
+				"endDateTime is correct": false,
+				"price is correct": false,
+				"room is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"204"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"startDateTime is correct": false,
+					"endDateTime is correct": false,
+					"price is correct": false,
+					"room is correct": false
+				}
+			],
+			"time": "204",
+			"totalRequestTime": "204",
+			"iterationResults": {}
+		},
+		{
+			"name": "Details of a session for a given course and program",
+			"id": "a5f7de28-668a-484a-97e4-7bd75620a720",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"startDateTime is correct": false,
+				"endDateTime is correct": false,
+				"price is correct": false,
+				"room is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"208"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"startDateTime is correct": false,
+					"endDateTime is correct": false,
+					"price is correct": false,
+					"room is correct": false
+				}
+			],
+			"time": "208",
+			"totalRequestTime": "208",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modify an existing session. Returns the updated session",
+			"id": "ad801b6e-553b-4f3c-9a08-de011ff8d5f9",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"startDateTime is correct": false,
+				"endDateTime is correct": false,
+				"price is correct": false,
+				"room is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"266"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"startDateTime is correct": false,
+					"endDateTime is correct": false,
+					"price is correct": false,
+					"room is correct": false
+				}
+			],
+			"time": "266",
+			"totalRequestTime": "266",
+			"iterationResults": {}
+		},
+		{
+			"name": "delete a session by id for a given course and program",
+			"id": "ab206ca4-fb98-40dc-8a03-e063ae336f5c",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Check status code": false,
+				"array is empty": false
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"213"
+			],
+			"allTests": [
+				{
+					"Check status code": false,
+					"array is empty": false
+				}
+			],
+			"time": "213",
+			"totalRequestTime": "213",
+			"iterationResults": {}
+		},
+		{
+			"name": "Add a new Participant",
+			"id": "d90c4c8b-0ae4-45e3-b7c8-1be4cf7a0bee",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"firstName is correct": false,
+				"lastName is correct": false,
+				"birthdate is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"228"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"firstName is correct": false,
+					"lastName is correct": false,
+					"birthdate is correct": false
+				}
+			],
+			"time": "228",
+			"totalRequestTime": "228",
+			"iterationResults": {}
+		},
+		{
+			"name": "List all participants",
+			"id": "8cba88ea-cb06-4b97-96e9-fe59868652b7",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"firstName is correct": false,
+				"lastName is correct": false,
+				"birthdate is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"234"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"firstName is correct": false,
+					"lastName is correct": false,
+					"birthdate is correct": false
+				}
+			],
+			"time": "234",
+			"totalRequestTime": "234",
+			"iterationResults": {}
+		},
+		{
+			"name": "Detail of a participant",
+			"id": "a47f09bd-fdd7-4284-9b79-71348db79a1b",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"firstName is correct": false,
+				"lastName is correct": false,
+				"birthdate is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"179"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"firstName is correct": false,
+					"lastName is correct": false,
+					"birthdate is correct": false
+				}
+			],
+			"time": "179",
+			"totalRequestTime": "179",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modify an existing participant",
+			"id": "3d611775-02f3-46a3-a0c9-5dc899f61aee",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"firstName is correct": false,
+				"lastName is correct": false,
+				"birthdate is correct": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"198"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"firstName is correct": false,
+					"lastName is correct": false,
+					"birthdate is correct": false
+				}
+			],
+			"time": "198",
+			"totalRequestTime": "198",
+			"iterationResults": {}
+		},
+		{
+			"name": "Register a participant to a course",
+			"id": "291bb04e-896d-4a46-8b1d-202ed3c86d69",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/participant/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Check status code": false,
+				"participant is registered in the course": false
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"participant is registered in the course": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"213"
+			],
+			"allTests": [
+				{
+					"Check status code": false,
+					"participant is registered in the course": false
+				}
+			],
+			"time": "213",
+			"totalRequestTime": "213",
+			"iterationResults": {}
+		},
+		{
+			"name": "List all courses in which a participant is registered",
+			"id": "80cfc999-3cc0-40b3-bbdd-9704b4a76c58",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1/summary",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"the course is in the list": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the course is in the list": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"207"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"the course is in the list": false
+				}
+			],
+			"time": "207",
+			"totalRequestTime": "207",
+			"iterationResults": {}
+		},
+		{
+			"name": "get participants list for a given course",
+			"id": "a3e8ddb5-3657-4c14-8003-d8be6a37fd8c",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/participant",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"the participant is in the list": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is in the list": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"299"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"the participant is in the list": false
+				}
+			],
+			"time": "299",
+			"totalRequestTime": "299",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete an existing participant by id",
+			"id": "3a39cab6-fef2-468b-9714-4869ad8f245a",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/3",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"tests": {
+				"Check status code": false,
+				"the participant is removed from the general list": false,
+				"the participant is removed from the course in which he is registered": false
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is removed from the general list": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is removed from the course in which he is registered": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"250"
+			],
+			"allTests": [
+				{
+					"Check status code": false,
+					"the participant is removed from the general list": false,
+					"the participant is removed from the course in which he is registered": false
+				}
+			],
+			"time": "250",
+			"totalRequestTime": "250",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 91,
+	"totalTime": 5855,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Create a new training program",
+			"id": "13f4fd7f-f0fc-40de-88eb-7489f1bc5e8f",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "List all training programs",
+			"id": "9f5cffea-0eda-404d-9e50-f98a28c94c76",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "View the details of a training program",
+			"id": "50ec05e1-89b0-47dc-98f0-b70287cea215",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "update an existing training program. Returns the updated training program.",
+			"id": "22e2ba24-e2b0-4b3f-bb1d-91c62b38e399",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"name is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"richDescription is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"field is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Delete an existing training program",
+			"id": "9b378f7b-9ddb-42de-a89f-749f757a4bf4",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Add a new course to an existing program",
+			"id": "4f7455cd-2bee-4eb3-b6ba-806cca1e0918",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Get all course for a given program",
+			"id": "8d40e3de-2699-48c6-b188-9d6699b42732",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Detail of a course for a given program",
+			"id": "b43ec09d-19c9-408f-bd41-4e751d757697",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Update an existing course. Returns the updated course",
+			"id": "543622e9-0b5f-4ede-aadb-60243ab6f6a1",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"quarter is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"year is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"maxNumberOfParticipants is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "delete a course for a given program",
+			"id": "f4e470c2-56c9-47c5-bffe-670208237545",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Create new session(s) for a given course and program",
+			"id": "0a518879-2909-4554-b9fd-194550f9dde4",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "List all sessions for a given course and program",
+			"id": "d627b8b3-b500-4d49-92b6-e6bdbb2a470a",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Details of a session for a given course and program",
+			"id": "a5f7de28-668a-484a-97e4-7bd75620a720",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Modify an existing session. Returns the updated session",
+			"id": "ad801b6e-553b-4f3c-9a08-de011ff8d5f9",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"startDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"endDateTime is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"price is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"room is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "delete a session by id for a given course and program",
+			"id": "ab206ca4-fb98-40dc-8a03-e063ae336f5c",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/session/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"array is empty": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Add a new Participant",
+			"id": "d90c4c8b-0ae4-45e3-b7c8-1be4cf7a0bee",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "List all participants",
+			"id": "8cba88ea-cb06-4b97-96e9-fe59868652b7",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Detail of a participant",
+			"id": "a47f09bd-fdd7-4284-9b79-71348db79a1b",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Modify an existing participant",
+			"id": "3d611775-02f3-46a3-a0c9-5dc899f61aee",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"birthdate is correct": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Register a participant to a course",
+			"id": "291bb04e-896d-4a46-8b1d-202ed3c86d69",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/participant/1",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"participant is registered in the course": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "List all courses in which a participant is registered",
+			"id": "80cfc999-3cc0-40b3-bbdd-9704b4a76c58",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/1/summary",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the course is in the list": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "get participants list for a given course",
+			"id": "a3e8ddb5-3657-4c14-8003-d8be6a37fd8c",
+			"url": "http://localhost:8080/koulutus/koulutus/api/program/2/course/2/participant",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is in the list": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "Delete an existing participant by id",
+			"id": "3a39cab6-fef2-468b-9714-4869ad8f245a",
+			"url": "http://localhost:8080/koulutus/koulutus/api/participant/3",
+			"time": "2019-05-07T15:43:20.835Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is removed from the general list": {
+					"pass": 0,
+					"fail": 1
+				},
+				"the participant is removed from the course in which he is registered": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		}
+	],
+	"synced": false
+}

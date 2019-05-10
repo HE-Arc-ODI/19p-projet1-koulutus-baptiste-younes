@@ -29,7 +29,7 @@ public class Session {
     this.room = room;
   }
 
-  public Session(Long id, Date startDateTime, Date endDateTime, Double price, String room) {
+  public Session(Long id, Date startDateTime, Date endDateTime, Double price, String room) { // FIXME: constructeur non utilisé
     this(startDateTime,endDateTime,price,room);
     this.id = id;
   }

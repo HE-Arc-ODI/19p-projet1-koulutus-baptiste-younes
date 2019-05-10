@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 
 @Path("program/{programId}/course/{courseId}/session")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+@Consumes(MediaType.APPLICATION_FORM_URLENCODED) // ne correspond pas à la spec
 public class SessionResource {
   @Inject
   private PersistenceService persistenceService;
@@ -38,7 +38,7 @@ public class SessionResource {
       @FormParam("startDateTime") String startDateTime,
       @FormParam("endDateTime") String endDateTime,
       @FormParam("price") Integer price,
-      @FormParam("room") String room){
+      @FormParam("room") String room){ // formparam ne correspond pas à la spec
     return persistenceService.createAndPersistSession(
         new Long(programId),
         new Long(courseId),

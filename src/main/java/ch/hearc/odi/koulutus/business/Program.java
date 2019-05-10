@@ -33,12 +33,12 @@ public class Program {
     this.price = price;
   }
 
-  public Program(Long id, String name, String richDescription, String field, Long price) {
+  public Program(Long id, String name, String richDescription, String field, Long price) { // FIXME: constructeur non utilisé
     this(name, richDescription,field,price);
     this.id = id;
   }
 
-  public Program(Program p, Course c) {
+  public Program(Program p, Course c) { // FIXME: constructeur non utilisé
     id = p.getId();
     name = p.getName();
     richDescription = p.getRichDescription();

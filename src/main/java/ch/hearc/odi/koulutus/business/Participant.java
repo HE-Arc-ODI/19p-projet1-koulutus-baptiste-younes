@@ -90,7 +90,7 @@ public class Participant {
     this.courses.remove(this.getIndex(idCourse));
   }
 
-  public int getIndex(Long id) {
+  public int getIndex(Long id) { // FIXME: que fait cette méthode?
     int i;
     for (i = 0; i < courses.size(); i++) {
       Course course = courses.get(i);}
