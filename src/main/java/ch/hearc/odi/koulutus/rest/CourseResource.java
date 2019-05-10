@@ -33,7 +33,7 @@ public class CourseResource {
         @PathParam("programId") Integer programId,
         @FormParam("quarter") String quarter,
         @FormParam("year") Integer year,
-        @FormParam("maxNumberOfParticipants") Integer maxNumberOfParticipants)
+        @FormParam("maxNumberOfParticipants") Integer maxNumberOfParticipants) // formparam ne correspond pas à la spec
         throws ProgramException {
         return persistenceService.createAndPersistCourse(programId, quarter, year, maxNumberOfParticipants);
     }
@@ -62,7 +62,7 @@ public class CourseResource {
     }
 
     @PUT
-    @Path("{programId}/course/{courseId}")
+    @Path("{programId}/course/{courseId}") // consumes manquant
     public Course updateCourse(
         @PathParam("programId")Integer programId,
         @PathParam("courseId") Integer courseId,
@@ -71,7 +71,7 @@ public class CourseResource {
     }
 
     @GET
-    @Path("{programId}/course/{courseId}/participant")
+    @Path("{programId}/course/{courseId}/participant") // consumes manquant
     public List<Participant> getParticipantsByCourseId(
         @PathParam("programId")Integer programId,
         @PathParam("courseId") Integer courseId,

@@ -28,7 +28,7 @@ public class ProgramResource {
         @FormParam("name") String name,
         @FormParam("richDescription") String richDescription,
         @FormParam("field") String field,
-        @FormParam("price") Integer price){
+        @FormParam("price") Integer price){ // formparam ne correspond pas à la spec
         return persistenceService.createAndPersistProgram(name,richDescription,field,price);
     }
 

@@ -32,7 +32,7 @@ public class ParticipantResource {
 
   @POST
   public void addParticipant(
-      @FormParam("firstname") String firstname,
+      @FormParam("firstname") String firstname, // formparam ne correspond pas à la spec
       @FormParam("lastname") String lastname,
       @FormParam("birthdate") String birthdate) throws ParseException {
     persistenceService.addParticipant(firstname,lastname,new SimpleDateFormat("dd/MM/yyyy").parse(birthdate));
@@ -53,7 +53,7 @@ public class ParticipantResource {
   }
 
   @PUT
-  @Path("{participantId}")
+  @Path("{participantId}") // consumes manquant
   public void editParticipant(
       @PathParam("participantId") Integer participantId, Participant participant) {
     persistenceService.editParticipant(participantId, participant);
